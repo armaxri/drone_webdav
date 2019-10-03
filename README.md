@@ -46,7 +46,7 @@ Since this plug-in is based on Ubuntu, it's possible to use the normal command l
     - **Second Parameter:** Remote destination for file or directory.
 
 ## NextCloud and ownCloud Specialty
-When connecting to a NextCloud or ownCloud server, you have to configure a webdav_root. The root has to look like this "/remote.php/dav/files/<UserName>", where "<UserName>" has to be replaced by the actual user name you use for the connection.
+When connecting to a NextCloud or ownCloud server, you have to configure a webdav_root. The root has to look like this "/remote.php/dav/files/***UserName***", where "***UserName***" has to be replaced by the actual user name you use for the connection.
 
 ## Connection Options
 This plug-in uses [webdav-client-python-3](https://github.com/ezhov-evgeny/webdav-client-python-3), therefor you can use the full feature-set of this powerful module. Use the following parameters in your yaml file to configure the drone.io instance.
