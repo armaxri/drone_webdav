@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+drone_webdav.py --operation=upload --src=$1 --dst=$2
