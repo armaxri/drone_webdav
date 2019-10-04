@@ -8,6 +8,8 @@ The plug-in can simply configured and then be executed using commands. Since the
 pipeline:
   test_plugin:
     image: arnemaxr/drone-webdav:stable
+    # To ensure updates and bug fixes:
+    pull: true
     webdav_hostname: https://nextcloud.my-server.com
     webdav_root: /remote.php/dav/files/my_test_user
     webdav_login: my_test_user

@@ -1,28 +1,29 @@
 
 pipeline:
 
-#  docker_dryrun:
-#    image: plugins/docker
-#    repo: arnemaxr/drone-webdav
-#    tags: [ "latest"]
-#    username:
-#      from_secret: docker_username
-#    password:
-#      from_secret: docker_password
-#    dry_run: true
-#    purge: true
-#
-#  docker_publish_test:
-#    image: plugins/docker
-#    repo: arnemaxr/drone-webdav
-#    tags: [ "latest"]
-#    username:
-#      from_secret: docker_username
-#    password:
-#      from_secret: docker_password
+  docker_dryrun:
+    image: plugins/docker
+    repo: arnemaxr/drone-webdav
+    tags: [ "latest_test"]
+    username:
+      from_secret: docker_username
+    password:
+      from_secret: docker_password
+    dry_run: true
+    purge: true
+
+  docker_publish_test:
+    image: plugins/docker
+    repo: arnemaxr/drone-webdav
+    tags: [ "latest_test"]
+    username:
+      from_secret: docker_username
+    password:
+      from_secret: docker_password
 
   test_plugin:
-    image: arnemaxr/drone-webdav:latest
+    image: arnemaxr/drone-webdav:latest_test
+    pull: true
     webdav_hostname:
       from_secret: webdav_hostname
     webdav_root:
@@ -45,11 +46,11 @@ pipeline:
       - webdav_delete test_dir_y
       - webdav_delete test_dir_z
 
-#  docker_publish_release:
-#    image: plugins/docker
-#    repo: arnemaxr/drone-webdav
-#    tags: [ "stable"]
-#    username:
-#      from_secret: docker_username
-#    password:
-#      from_secret: docker_password
+  docker_publish_release:
+    image: plugins/docker
+    repo: arnemaxr/drone-webdav
+    tags: [ "stable"]
+    username:
+      from_secret: docker_username
+    password:
+      from_secret: docker_password
